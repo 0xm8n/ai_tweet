@@ -1,0 +1,20 @@
+version: '3'
+services:
+  ai_tweet:
+    env_file: .env
+    container_name: ai_tweet
+    build:
+      context: .
+      dockerfile: Dockerfile
+      network: host
+    environment: 
+      API_KEY: ${API_KEY}
+      AI_ORG: ${AI_ORG}
+      CONSUMER_KEY: ${CONSUMER_KEY}
+      CONSUMER_SECRET: ${CONSUMER_SECRET}
+      ACCESS_TOKEN: ${ACCESS_TOKEN}
+      ACCESS_TOKEN_SECRET: ${ACCESS_TOKEN_SECRET}
+      SUBJECTS: ${SUBJECTS}
+      EXCLUDE: ${EXCLUDE}
+      LANGUAGE: ${LANGUAGE}
+      PYTHONUNBUFFERED: 1
